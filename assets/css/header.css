@@ -1,0 +1,177 @@
+/*********************
+Name: Jacob Wallace
+Coding 07-09
+Purpose: CSS for header/navbar template on each page
+**********************/
+
+
+/********** NAV CONTAINER *************/
+
+nav {
+    color: #fff;
+    height: 5rem;
+    width: 100vw;
+    background-color: #111;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+  
+/*** Styling Logo ***/
+ 
+.logo {
+    padding:1rem;
+    text-align: center;
+}
+  
+.logo img {
+    height: 4rem;
+    width: 4rem;
+}
+  
+/*** Styling Links ***/
+.nav-links {
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+  
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+  
+.nav-links li a:hover {
+    color: rgb(153, 67, 153);
+}
+  
+.nav-links li {
+    color: #fff;
+    position: relative;
+}
+  
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+  
+/*** Styling Hamburger Icon ***/
+
+.hamburger div {
+    width: 30px;
+    height:3px;
+    background: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+  
+.hamburger {
+    display: none;
+}
+  
+/*** Animating Hamburger Icon on Click ***/
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+  
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width:0;
+}
+  
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+  
+/************* MEDIA QUERIES *****************/
+
+/****** TABLET ******/
+@media screen and (max-width: 800px) {
+
+    /*** NAVBAR ***/
+
+    nav {
+        position: fixed;
+        padding-bottom: 100px;
+    }
+
+    .hamburger {
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 1s ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        background-color: #111;
+        height: 50vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 95% -50%);
+        -webkit-clip-path: circle(50px at 95% -50%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+}

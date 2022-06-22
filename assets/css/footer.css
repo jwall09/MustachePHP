@@ -1,0 +1,42 @@
+/*********************
+Name: Jacob Wallace
+Coding 07-09
+Purpose: CSS for footer template on each page
+**********************/
+
+
+/************* FOOTER *****************/
+footer {
+    bottom: 0;
+    background-color: #111;
+    height: auto;
+    width: 100%;
+    color: #fff;
+    padding: 1em;
+    z-index: 1;
+}
+  
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.rem;
+}
+  
+  
+/************* MEDIA QUERIES *****************/
+
+/****** TABLET ******/
+@media screen and (max-width: 800px) {
+
+    /**** FOOTER ****/
+    .footer-menu ul{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 1em;
+    }
+}
